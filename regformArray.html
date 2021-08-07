@@ -1,73 +1,71 @@
-   <html>
-      <head>
-        <title>Student Data</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style>
-            h1 {text-align: center;}
-        </style>
+<html>
+  <head>
+  <title>Student Data</title>
+  <script src ="submit.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      h1 {text-align: center;}
+    </style>
         
-        </head>
-        <h1>STUDENT REGISTRATION FORM</h1>
-          <div style="display: flex; justify-content: center;">
-             <form action="#">
+  </head>
+  <h1>STUDENT REGISTRATION FORM</h1>
+  <div style="display: flex; justify-content: center;">
         
-          <label for="fname">FIRST NAME:</label><br>
-          <input type="text" id="fname" name="fname"><br>
-    
-          <label for="lname">LAST Name:</label><br>
-          <input type="text" id="lname" name="lname"><br>
-    
-          <label for="fathername">FATHER NAME:</label><br>
-          <input type="text" id="fathername" name="fathername"><br>
-    
-          <label for="mothername">MOTHER NAME:</label><br>
-          <input type="text" id="mothername" name="mothername"><br>
-    
-          <label for="phonenumber">PHONE NUMBER:</label><br>
-          <input type="text" id="phonenumber" name="phonenumber"><br>
-    
-          <label for="Aadharnumber">AADHAR NUMBER:</label><br>
-          <input type="text" id="Aadharnumber" name="aadharnumber"><br>
-    
-          <label for="coursesEnrolled">COURSE:</label><br>
-            <select name="coursesEnrolled" id="coursesEnrolled"><br>
-              <option value="">Select</option>
-              <option value=BTech>BTech</option>
-              <option value=BBA>BBA</option>
-              <option value=MTech>MTech</option>
-              <option value=MBA>MBA</option>
-            </select><br><br>
-            <input type=Submit value="Submit"><br>
-          </form>
-           </div>
-
-      <script type="text/javascript">
-      const studentsData = new Map();
-      const uniquePhoneNumber=new Set();
-      const form = document.querySelector("form")
-      form.addEventListener("submit", function (event) 
-      {
-        event.preventDefault();
-        const formData = new FormData(this);
-        const entries = formData.entries();
-        const data = Object.fromEntries(entries);
-        if (studentsData.has(data.aadharNumber)) 
-        {
-          alert('user already exists with given aadhar');
-          return false;
-        } else {
-      if (studentsData.has(data.phoneNumber)) 
-        {
-            alert('user already exists with given phone number');
-            return false;
-        }
-      studentsData.set(data.aadharNumber, data);
-      }
-    uniquePhoneNumber.add(data.phoneNumber)
-    alert('you have successfully registered');
-    form.reset();
-    console.log(Array.from(studentsData.values()));
-  });
-  </script>
-  </html
+    <body>
+    <div class="maindiv">
+      <div class="contents">
+      <table id="table">
+      <tbody>
+        <tr>
+          <td class="labels">FristName: </td>
+          <td>
+            <input type="text" id="fn">
+          <td>
+        </tr>
+        <tr>
+          <td class="labels">LastName: </td>
+          <td>
+            <input type="text" id="ln">
+          </td>
+        </tr>
+        <tr>
+          <td class="labels">FatherName: </td>
+          <td>
+            <input type="text" id="ftn">
+          </td>
+        </tr>
+        <tr>
+          <td class="labels">MotherName: </td>
+          <td>
+            <input type="text" id="mtn">
+          </td>
+        </tr>
+        <tr>
+          <td class="labels">AadharNumber: </td>
+          <td>
+            <input type="text" id="aadno">
+          </td>
+        </tr>
+        <tr>
+          <td class="labels">PhoneNumber: </td>
+          <td>
+            <input type="text" id="phno">
+          </td>
+        </tr>
+        <tr>
+          <td class="labels">Course: </td>
+          <td>
+            <input type="text" id="course">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button id="submit" onclick="submit()">Submit</button> <br>
+    <span id="result">
+    </span>
+    </div>
+  </div>
+  </body>
+  </div>
+</html>
