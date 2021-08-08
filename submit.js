@@ -26,7 +26,7 @@ function submit()
     }
     var mtn = document.getElementById("mtn").value;
 
-    if(mtn == "" ||ftn <= 0)
+    if(mtn == "" ||mtn <= 0)
     {
         alert("Enter Correct Name");
         document.getElementById("mtn").focus();
@@ -63,12 +63,14 @@ function submit()
     var fourth = mtn;
     var fifth = aadno;
     var sixth = phno; 
-    var seven = course;   
+    var seventh = course;   
     
     // var resultDisplay = document.getElementById("result");
     // resultDisplay.innerHTML =  first+second+third+fourth+fifth+sixth+seven ;
     
     var a = [];
-    a.push(first,second,third,fourth,fifth,sixth,seven);
+    a.push(first,second,third,fourth,fifth,sixth,seventh);
+    alert('you have successfully registered');
+    form.reset();
     console.log(a);
 }
